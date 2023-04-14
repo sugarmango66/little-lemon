@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'littlelemon.urls'
+ROOT_URLCONF = 'littlelemon.urls' #points to the URL dispatcher
 
 TEMPLATES = [
     {
@@ -116,9 +116,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'restaurant/static/' #used when {% load static %}
+# In production, static files are collected to STATIC_ROOT and served by web server.
+STATIC_URL = 'static/' 
 
-#tell where to find staic assets
+#in develepment, tell where to find staic assets #used when {% load static %}
 STATICFILES_DIRS = [
     "restaurant/static",
 ]
